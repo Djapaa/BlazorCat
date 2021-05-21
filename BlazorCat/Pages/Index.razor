@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<h1>Authentication</h1>
+
+    <AuthorizeView>
+        <Authorized>
+            Welcome @context.User.Identity.Name
+        </Authorized>
+        <NotAuthorized>
+            You are not Authorized. Go to<a href="/login"> Log in</a>
+        </NotAuthorized>
+
+    </AuthorizeView>
+
+
+
+
+

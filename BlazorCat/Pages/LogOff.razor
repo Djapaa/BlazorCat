@@ -1,0 +1,12 @@
+@page "/logoff"
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider StateProvider
+@code
+{ 
+    protected override void OnInitialized()
+    {
+        ((TokenAuthenticationStateProvider)StateProvider).MakeUserAnonymous();
+        NavigationManager.NavigateTo("/");
+
+    }
+}
