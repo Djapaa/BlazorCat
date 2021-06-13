@@ -3,45 +3,80 @@
 @using Microsoft.AspNetCore.Authorization
 @attribute [Authorize]
 
+
 <div class="row">
     <div class="col alert alert-secondary text-center">
 
-        <h1>Counter</h1>
-
-    </div>
-</div>
-<div class="row">
-    <div class="col 6 text-left">
-        <button class="btn btn-primary p-3" @onclick="IncrementCount">Click me</button>
-    </div>
-    <div class="col 6 text-right">
-        <div style="font-size: 50px">@currentCount</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col text-center">
-        <input type="number" class="form-control-lg" @bind="currentCount"  />
-        
+        <h1>Cat rating</h1>
 
     </div>
 </div>
 
+<div class="text-center">
+    <img src="https://sun1-18.userapi.com/impg/kTCATnlPSe1MnI7fe13u6BX1YNnuxsLiskvhDw/WpP8bo5EZRE.jpg?size=1145x1145&quality=96&sign=ca92bc7aa3d6758ad84a5191cc9b8816&type=album" width="500" />
+    <div class="row">
 
-
-
-
+        <div class="col 6 ">
+            <button class="btn btn-primary " @onclick="Rait5">5</button>
+            <button class="btn btn-primary " @onclick="Rait4">4</button>
+            <button class="btn btn-primary " @onclick="Rait3">3</button>
+            <button class="btn btn-primary " @onclick="Rait2">2</button>
+            <button class="btn btn-primary " @onclick="Rait1">1</button>
+            <span style="font-size: 30px">@sums.ToString("0.00")</span>
+        </div>
+    </div>
+</div>
 
 
 
 @code {
 
-    private int currentCount = 0;
+    double sums = 0;
+    public int count = 0;
 
-    private void IncrementCount()
+    public List<double> nums = new List<double>();
+   
+
+    public void Rait5()
     {
-        currentCount++;
+        nums.Add(5.0);
+        count++;
+        double sum = nums.Sum();
+        sums = sum / count;
+    }
+    public void Rait4()
+    {
+        nums.Add(4.0);
+        count++;
+        double sum = nums.Sum();
+        sums = sum / count;
+    }
+    public void Rait3()
+    {
+        nums.Add(3.0);
+        count++;
+        double sum = nums.Sum();
+        sums = sum / count;
 
     }
+    public void Rait2()
+    {
+        nums.Add(2.0);
+        count++;
+        double sum = nums.Sum();
+        sums = sum / count;
+    }
+    public void Rait1()
+    {
+        nums.Add(1.0);
+        count++;
+        double sum = nums.Sum();
+        sums = sum / count;
+    }
+    }
 
-}
+
+
+
+
 

@@ -1,0 +1,9 @@
+﻿.star-rating__input {
+    display: none;
+}
+
+    .star-rating__ico:hover:before,
+    .star-rating__ico:hover ~ .star-rating__ico:before,
+    .star-rating__input:checked ~ .star-rating__ico:before {
+        content: "\f005";
+    }
